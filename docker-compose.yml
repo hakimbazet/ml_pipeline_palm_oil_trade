@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+    db:
+        image: postgres:10
+        container_name: postgresql_db
+        restart: always
+        environment:
+            POSTGRES_PASSWORD: postgresdev
+        ports:
+            - "5432:5432"
+    
+    py_services:
+        image: py_container_dev:0.1
+        #build: .
+        container_name: python_service
+        ports:
+            - "8080:8080"
+            - "5002:5002"
+        volumes:
+            - .:/apps
+        depends_on:
+            - db
