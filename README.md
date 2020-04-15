@@ -20,3 +20,5 @@ chmod +x /src/load_py_to_scheduler.sh
 ./src/load_py_to_scheduler.sh
 ```
 
+All of the workflow will be automated via Apache Airflow.
+
